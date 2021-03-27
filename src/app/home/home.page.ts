@@ -1,3 +1,4 @@
+import { Router} from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +8,22 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor( public router:Router, ) {}
+
+  public ToNdtvNews(){
+  
+    this.router.navigate(["./home/ndtvnews"])
+
+  }
+  public ToIndiaTodayNews(){
+  
+    this.router.navigate(["./home/indiatoday"])
+
+  }
+  public ToIndianExpressNews(){
+  
+    this.router.navigate(["./home/india-express"])
+
+  }
 
 }

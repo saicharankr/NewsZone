@@ -1,20 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title class="header-text">
+      Quick News
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content  class="content">
+  <ion-grid class="center-button">
+    <ion-row class="align-center">
+      <ion-button class="button" (click)="ToNdtvNews()">NDTV</ion-button>
+    </ion-row>
+    <ion-row class="align-center">
+      <ion-button class="button" (click)="ToIndiaTodayNews()">INDIA TODAY</ion-button>
+    </ion-row>
+    <ion-row class="align-center">
+      <ion-button class="button" (click)="ToIndianExpressNews()">INDIAN EXPRESS</ion-button>
+    </ion-row>
+  </ion-grid>
 </ion-content>

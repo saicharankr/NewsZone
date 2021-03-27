@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-item slot="start" lines="none">
+      <ion-buttons>
+        <ion-back-button class="back-button"></ion-back-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-title class="header-text"> NDTV </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="content" [scrollEvents]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing..."
+    >
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let news of newsItems">
+    <img [src]="news.imgLink" class="img" />
+    <ion-card-header>
+      <a [href]="news.link" >
+        <ion-card-title class="card-title">{{news.title}}</ion-card-title>
+      </a>
+    </ion-card-header>
+    <ion-card-content class="card-content">
+      {{news.content}}
+    </ion-card-content>
+  </ion-card>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
