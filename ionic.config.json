@@ -1,0 +1,7 @@
+{
+  "name": "NewsZone",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
